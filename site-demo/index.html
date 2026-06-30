@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Escola Felipe Magalhães — 28 anos formando pessoas, cuidando de histórias e construindo futuros. Educação Infantil e Fundamental I em Candeias. Matrículas abertas.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Escola Felipe Magalhães — Preparando para o futuro">
+  <meta property="og:description" content="28 anos de ensino em Candeias. Educação Infantil e Fundamental I. Matrículas abertas.">
+  <meta property="og:type" content="website">
+  <title>Escola Felipe Magalhães — Preparando para o futuro</title>
+
+  <!-- Google Fonts: Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS via CDN (Play CDN — apenas para protótipos/demos) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'school-red':    '#E63946',
+            'school-blue':   '#1D3557',
+            'school-yellow': '#FBBF24',
+          },
+          fontFamily: {
+            poppins: ['Poppins', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <!-- Estilos customizados -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="font-poppins text-gray-800 antialiased">
+
+  <!-- ============================================================
+       BOTÃO FLUTUANTE WHATSAPP
+       INFORMAÇÃO: Substituir "xx" pelo DDD real da escola (ex: 81 para Pernambuco)
+  ============================================================ -->
+  <a id="whatsapp-fab"
+     href="https://wa.me/xx99926-7481?text=Olá!%20Gostaria%20de%20informações%20sobre%20a%20Escola%20Felipe%20Magalhães."
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="Fale com a escola pelo WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <!-- ============================================================
+       HEADER FIXO
+  ============================================================ -->
+  <header id="site-header" class="fixed top-0 left-0 w-full z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <nav class="flex items-center justify-between h-16 md:h-20" role="navigation" aria-label="Navegação principal">
+
+        <!-- LOGO -->
+        <!-- Identidade visual: três figuras humanas estilizadas (vermelho, azul, amarelo) em formação circular -->
+        <a href="#hero" class="scroll-link flex items-center gap-3 flex-shrink-0" aria-label="Escola Felipe Magalhães — Início">
+          <svg width="46" height="46" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <!-- Figura Amarela — topo centro -->
+            <circle cx="32" cy="10" r="7" fill="#FBBF24"/>
+            <path d="M18 28 Q32 16 46 28 L44 32 Q32 22 20 32 Z" fill="#FBBF24"/>
+            <!-- Figura Vermelha — base esquerda -->
+            <circle cx="13" cy="38" r="7" fill="#E63946"/>
+            <path d="M0 56 Q13 44 26 56 L24 60 Q13 50 2 60 Z" fill="#E63946"/>
+            <!-- Figura Azul — base direita -->
+            <circle cx="51" cy="38" r="7" fill="#4A90D9"/>
+            <path d="M38 56 Q51 44 64 56 L62 60 Q51 50 40 60 Z" fill="#4A90D9"/>
+          </svg>
+          <div>
+            <span class="logo-text-main block font-bold text-base leading-tight">Felipe Magalhães</span>
+            <span class="logo-text-sub block text-xs font-semibold tracking-widest uppercase">Escola</span>
+          </div>
+        </a>
+
+        <!-- LINKS DESKTOP -->
+        <div class="hidden md:flex items-center gap-7">
+          <a href="#sobre"       class="scroll-link nav-link text-sm font-medium text-white hover:text-school-yellow transition-colors duration-200">Sobre</a>
+          <a href="#segmentos"   class="scroll-link nav-link text-sm font-medium text-white hover:text-school-yellow transition-colors duration-200">Segmentos</a>
+          <a href="#vida-escolar" class="scroll-link nav-link text-sm font-medium text-white hover:text-school-yellow transition-colors duration-200">Vida Escolar</a>
+          <a href="#matriculas"  class="scroll-link nav-link text-sm font-medium text-white hover:text-school-yellow transition-colors duration-200">Matrículas</a>
+          <a href="#contato"     class="scroll-link nav-link text-sm font-medium text-white hover:text-school-yellow transition-colors duration-200">Contato</a>
+        </div>
+
+        <!-- CTA + HAMBÚRGUER -->
+        <div class="flex items-center gap-3">
+          <!-- INFORMAÇÃO: Substituir "xx" pelo DDD real antes de publicar -->
+          <a href="https://wa.me/xx99926-7481?text=Olá!%20Gostaria%20de%20informações%20sobre%20matrículas%20na%20Escola%20Felipe%20Magalhães."
+             target="_blank"
+             rel="noopener noreferrer"
+             class="hidden sm:inline-flex items-center gap-2 bg-school-red text-white text-sm font-bold px-5 py-2.5 rounded-full hover:bg-red-700 transition-colors duration-300 shadow-md">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            Matricule-se
+          </a>
+
+          <button id="menu-btn"
+                  class="md:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5 focus:outline-none rounded-lg"
+                  aria-label="Abrir ou fechar menu"
+                  aria-expanded="false"
+                  aria-controls="mobile-menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </button>
+        </div>
+      </nav>
+    </div>
+
+    <!-- MENU MOBILE -->
+    <div id="mobile-menu"
+         class="bg-white border-t border-gray-100 shadow-xl"
+         role="navigation"
+         aria-label="Menu mobile">
+      <div class="max-w-7xl mx-auto px-4 py-4 flex flex-col gap-1">
+        <a href="#sobre"        class="scroll-link py-3 px-4 text-sm font-medium text-gray-700 rounded-xl hover:bg-gray-50 hover:text-school-red transition-colors">Sobre a escola</a>
+        <a href="#segmentos"    class="scroll-link py-3 px-4 text-sm font-medium text-gray-700 rounded-xl hover:bg-gray-50 hover:text-school-red transition-colors">Segmentos</a>
+        <a href="#vida-escolar" class="scroll-link py-3 px-4 text-sm font-medium text-gray-700 rounded-xl hover:bg-gray-50 hover:text-school-red transition-colors">Vida Escolar</a>
+        <a href="#matriculas"   class="scroll-link py-3 px-4 text-sm font-medium text-gray-700 rounded-xl hover:bg-gray-50 hover:text-school-red transition-colors">Matrículas</a>
+        <a href="#contato"      class="scroll-link py-3 px-4 text-sm font-medium text-gray-700 rounded-xl hover:bg-gray-50 hover:text-school-red transition-colors">Contato</a>
+        <!-- INFORMAÇÃO: Substituir "xx" pelo DDD real -->
+        <a href="https://wa.me/xx99926-7481"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="mt-2 flex items-center justify-center gap-2 bg-school-red text-white text-sm font-bold py-3.5 px-5 rounded-full hover:bg-red-700 transition-colors">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          Matricule-se agora
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============================================================
+         1. HERO
+    ============================================================ -->
+    <section id="hero" class="hero-pattern relative min-h-screen flex items-center bg-school-blue overflow-hidden">
+
+      <!-- Formas decorativas de fundo -->
+      <div aria-hidden="true">
+        <div class="absolute top-0 right-0 w-1/2 h-full opacity-5">
+          <svg viewBox="0 0 400 800" fill="none" class="w-full h-full">
+            <circle cx="350" cy="200" r="300" fill="white"/>
+            <circle cx="100" cy="600" r="200" fill="white"/>
+          </svg>
+        </div>
+        <!-- Listra amarela lateral -->
+        <div class="absolute top-0 left-0 w-1.5 h-full bg-school-yellow opacity-70"></div>
+      </div>
+
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-20">
+        <div class="grid lg:grid-cols-2 gap-14 items-center">
+
+          <!-- Texto hero -->
+          <div class="text-white">
+            <!-- Badge matrículas -->
+            <div class="inline-flex items-center gap-2 bg-white/10 border border-white/20 backdrop-blur-sm rounded-full px-4 py-2 mb-8">
+              <span class="w-2 h-2 rounded-full bg-school-yellow animate-pulse"></span>
+              <span class="text-sm font-semibold tracking-wide">Matrículas Abertas 2025 🎒</span>
+            </div>
+
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
+              Preparando<br>
+              <span class="text-school-yellow">para o futuro.</span>
+            </h1>
+
+            <p class="text-lg sm:text-xl text-blue-100 leading-relaxed mb-3">
+              São <strong class="text-white font-bold">28 anos de ensino</strong> em Candeias,
+              formando pessoas com dedicação, afeto e compromisso com o futuro de cada criança.
+            </p>
+            <p class="text-base text-blue-200 mb-10">
+              Educação Infantil e Fundamental I — Av. Ulisses Montarroyos, 7190, Candeias.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4">
+              <!-- INFORMAÇÃO: Substituir "xx" pelo DDD real antes de publicar -->
+              <a href="https://wa.me/xx99926-7481?text=Olá!%20Vi%20o%20site%20da%20Escola%20Felipe%20Magalhães%20e%20gostaria%20de%20informações%20sobre%20matrículas."
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 class="inline-flex items-center justify-center gap-3 bg-green-500 hover:bg-green-600 text-white font-bold px-8 py-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-green-500/40 hover:-translate-y-0.5">
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
+                Falar pelo WhatsApp
+              </a>
+
+              <a href="#sobre"
+                 class="scroll-link inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 border border-white/25 text-white font-semibold px-8 py-4 rounded-full backdrop-blur-sm transition-all duration-300">
+                Conheça a escola
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Imagem hero (desktop) -->
+          <div class="hidden lg:block">
+            <div class="relative max-w-md ml-auto">
+              <!--
+                SUBSTITUIR PELA FOTO REAL:
+                Sugestão: foto institucional da fachada da escola, ou foto de grupo com alunos
+                em uniforme (camisa polo branca com detalhes vermelho e amarelo).
+                Tamanho recomendado: 540x440px, formato horizontal/quadrado.
+              -->
+              <img src="https://placehold.co/540x440/2d4a6b/c8d8e8?text=SUBSTITUIR%0A%0AFoto+institucional+%0Ada+escola%0A(fachada+ou+alunos)"
+                   alt="Escola Felipe Magalhães — fachada ou foto institucional da escola em Candeias"
+                   class="rounded-2xl w-full object-cover shadow-2xl border-4 border-white/10">
+
+              <!-- Card flutuante: 28 anos -->
+              <div class="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl px-6 py-5">
+                <div class="text-4xl font-extrabold text-school-blue leading-none">28<span class="text-school-red">+</span></div>
+                <div class="text-xs text-gray-400 font-medium mt-1">anos de ensino</div>
+              </div>
+
+              <!-- Badge flutuante: segmentos -->
+              <div class="absolute -top-5 -right-5 bg-school-yellow rounded-2xl shadow-lg px-4 py-3 text-center">
+                <div class="text-xs font-bold text-school-blue leading-snug">Ed. Infantil<br>& Fund. I</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/40 animate-bounce" aria-hidden="true">
+        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- Wave divisor hero → sobre -->
+    <div class="wave-divider -mt-1 bg-school-blue" aria-hidden="true">
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,0 C360,80 1080,0 1440,80 L1440,0 L0,0 Z" fill="#ffffff"/>
+      </svg>
+    </div>
+
+
+    <!-- ============================================================
+         2. SOBRE A ESCOLA
+    ============================================================ -->
+    <section id="sobre" class="py-20 lg:py-28 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+          <!-- Imagem -->
+          <div class="fade-in-left order-2 lg:order-1">
+            <div class="relative">
+              <!--
+                SUBSTITUIR PELA FOTO REAL:
+                Ambiente interno da escola — sala de aula, pátio, corredor ou atividade
+                pedagógica com alunos usando o uniforme (polo branca, detalhes vermelho e amarelo).
+                Tamanho recomendado: 540x420px.
+              -->
+              <img src="https://placehold.co/540x420/f0f4f8/1D3557?text=SUBSTITUIR%0A%0AFoto+interna+da+escola%0A(sala+de+aula%2C+pátio+ou%0Aatividade+pedagógica)"
+                   alt="Ambiente interno da Escola Felipe Magalhães — alunos em atividade pedagógica"
+                   class="rounded-2xl w-full object-cover shadow-lg">
+              <!-- Detalhes decorativos -->
+              <div class="absolute -bottom-4 -right-4 w-28 h-28 bg-school-yellow/20 rounded-2xl -z-10" aria-hidden="true"></div>
+              <div class="absolute -top-4 -left-4 w-20 h-20 bg-school-red/15 rounded-2xl -z-10" aria-hidden="true"></div>
+            </div>
+          </div>
+
+          <!-- Texto -->
+          <div class="fade-in-right order-1 lg:order-2">
+            <span class="inline-block text-school-red text-sm font-bold tracking-widest uppercase mb-4">Nossa história</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-school-blue leading-tight mb-6">
+              28 anos construindo<br>o futuro de Candeias.
+            </h2>
+
+            <blockquote class="border-l-4 border-school-red pl-6 mb-8">
+              <p class="text-xl text-gray-700 font-semibold italic leading-relaxed">
+                "Formando pessoas, cuidando de histórias e construindo futuros."
+              </p>
+            </blockquote>
+
+            <p class="text-gray-500 leading-relaxed mb-8">
+              A Escola Felipe Magalhães é uma instituição com 28 anos de trajetória dedicada à
+              Educação Infantil e ao Fundamental I. Localizada em Candeias, é espaço de aprendizado,
+              crescimento e memórias afetivas para gerações de famílias da região.
+            </p>
+
+            <!-- Estatísticas -->
+            <div class="grid grid-cols-2 gap-5 mb-8">
+              <div class="bg-gray-50 border border-gray-100 rounded-2xl p-5 text-center">
+                <div class="text-4xl font-extrabold text-school-red mb-1">28</div>
+                <div class="text-xs text-gray-400 font-medium uppercase tracking-wide">Anos de ensino</div>
+              </div>
+              <div class="bg-gray-50 border border-gray-100 rounded-2xl p-5 text-center">
+                <div class="text-4xl font-extrabold text-school-blue mb-1">2</div>
+                <div class="text-xs text-gray-400 font-medium uppercase tracking-wide">Segmentos atendidos</div>
+              </div>
+            </div>
+
+            <!-- Link Instagram -->
+            <div class="flex items-center gap-3 text-sm text-gray-400">
+              <svg class="w-5 h-5 text-pink-500 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+              <span>Acompanhe o dia a dia da escola em
+                <a href="https://instagram.com/escolafelipemagalhaes"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="text-school-red font-semibold hover:underline">@escolafelipemagalhaes</a>
+              </span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         3. SEGMENTOS DE ENSINO
+    ============================================================ -->
+    <section id="segmentos" class="py-20 lg:py-28 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="text-center mb-16 fade-in">
+          <span class="inline-block text-school-red text-sm font-bold tracking-widest uppercase mb-4">O que oferecemos</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-school-blue">Nossos segmentos de ensino</h2>
+          <p class="mt-4 text-gray-400 max-w-lg mx-auto text-sm leading-relaxed">
+            A Escola Felipe Magalhães atende dois segmentos fundamentais para o desenvolvimento pleno das crianças.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+
+          <!-- Card: Educação Infantil -->
+          <article class="fade-in bg-white rounded-2xl shadow-sm hover:shadow-md border border-gray-100 overflow-hidden transition-shadow duration-300">
+            <div class="overflow-hidden">
+              <!--
+                SUBSTITUIR PELA FOTO REAL:
+                Crianças pequenas em atividade de Educação Infantil — desenho livre, roda de história,
+                brincadeira dirigida. Alunos de uniforme (polo branca com detalhes vermelho/amarelo).
+                Tamanho recomendado: 600x240px.
+              -->
+              <img src="https://placehold.co/600x240/FEF9C3/92400E?text=SUBSTITUIR%0A%0AFoto:+Educação+Infantil%0A(atividade+com+crianças+pequenas)"
+                   alt="Educação Infantil na Escola Felipe Magalhães — crianças em atividade lúdica e pedagógica"
+                   class="w-full h-44 object-cover transition-transform duration-500 hover:scale-105">
+            </div>
+            <div class="p-8">
+              <div class="w-12 h-12 bg-school-yellow/20 rounded-xl flex items-center justify-center mb-5" aria-hidden="true">
+                <svg class="w-6 h-6 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-school-blue mb-3">Educação Infantil</h3>
+              <p class="text-gray-500 text-sm leading-relaxed mb-5">
+                Espaço de cuidado, descoberta e primeiras aprendizagens. Aqui as crianças vivem experiências
+                que estimulam a curiosidade, a criatividade e o desenvolvimento socioafetivo.
+              </p>
+              <!--
+                INFORMAÇÃO A SER FORNECIDA PELA ESCOLA:
+                Grade curricular, faixas etárias atendidas (ex: berçário, maternal, jardim),
+                metodologia pedagógica específica da Educação Infantil.
+              -->
+              <div class="info-placeholder">
+                [ INFORMAÇÃO A FORNECER ] Faixas etárias, grade curricular e metodologia da Educação Infantil.
+              </div>
+            </div>
+          </article>
+
+          <!-- Card: Fundamental I -->
+          <article class="fade-in bg-white rounded-2xl shadow-sm hover:shadow-md border border-gray-100 overflow-hidden transition-shadow duration-300" style="--delay: 0.12s">
+            <div class="overflow-hidden">
+              <!--
+                SUBSTITUIR PELA FOTO REAL:
+                Alunos do Fundamental I em sala de aula — aula expositiva, leitura, atividade em grupo.
+                Alunos de uniforme (polo branca com detalhes vermelho/amarelo).
+                Tamanho recomendado: 600x240px.
+              -->
+              <img src="https://placehold.co/600x240/DBEAFE/1E40AF?text=SUBSTITUIR%0A%0AFoto:+Fundamental+I%0A(alunos+em+sala+de+aula)"
+                   alt="Fundamental I na Escola Felipe Magalhães — alunos em sala de aula realizando atividades"
+                   class="w-full h-44 object-cover transition-transform duration-500 hover:scale-105">
+            </div>
+            <div class="p-8">
+              <div class="w-12 h-12 bg-school-blue/10 rounded-xl flex items-center justify-center mb-5" aria-hidden="true">
+                <svg class="w-6 h-6 text-school-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-school-blue mb-3">Fundamental I</h3>
+              <p class="text-gray-500 text-sm leading-relaxed mb-5">
+                Etapa essencial para a construção da autonomia, da leitura, da escrita e das competências
+                que preparam o aluno para os próximos ciclos da vida escolar.
+              </p>
+              <!--
+                INFORMAÇÃO A SER FORNECIDA PELA ESCOLA:
+                Anos atendidos (1º ao 5º ano?), grade curricular, projetos pedagógicos,
+                metodologia específica do Fundamental I.
+              -->
+              <div class="info-placeholder">
+                [ INFORMAÇÃO A FORNECER ] Anos atendidos (1º–5º?), grade curricular e metodologia do Fundamental I.
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         4. VIDA ESCOLAR / EVENTOS
+    ============================================================ -->
+    <section id="vida-escolar" class="py-20 lg:py-28 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="text-center mb-16 fade-in">
+          <span class="inline-block text-school-red text-sm font-bold tracking-widest uppercase mb-4">Nossa rotina</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-school-blue">Vida escolar e eventos</h2>
+          <p class="mt-4 text-gray-400 max-w-lg mx-auto text-sm leading-relaxed">
+            Momentos reais da nossa comunidade — com alegria, cultura e muito aprendizado.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+          <!-- Evento 1: Arraial da Copa -->
+          <article class="event-card fade-in bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-400 flex flex-col">
+            <div class="overflow-hidden flex-shrink-0">
+              <!--
+                SUBSTITUIR PELA FOTO REAL:
+                Foto do "Arraial da Copa" — alunos com trajes típicos juninos (chapéu de palha,
+                vestidos coloridos), decoração temática que une festa junina + Copa do Mundo.
+                Verificar no perfil @escolafelipemagalhaes nos Destaques ou posts de junho.
+                Tamanho recomendado: 600x380px.
+              -->
+              <img src="https://placehold.co/600x380/FEF9C3/78350F?text=SUBSTITUIR%0A%0AFoto:+Arraial+da+Copa%0AAlunos+com+trajes+típicos%0Afesta+junina+%2B+Copa+do+Mundo"
+                   alt="Arraial da Copa — alunos da Escola Felipe Magalhães com trajes típicos juninos no evento temático"
+                   class="card-img w-full h-52 object-cover">
+            </div>
+            <div class="p-6 flex flex-col flex-grow">
+              <div class="flex flex-wrap items-center gap-2 mb-3">
+                <span class="bg-yellow-100 text-yellow-700 text-xs font-bold px-3 py-1 rounded-full">⚽ Festa Junina</span>
+                <span class="bg-school-red/10 text-school-red text-xs font-bold px-3 py-1 rounded-full">Evento Escolar</span>
+              </div>
+              <h3 class="text-lg font-bold text-school-blue mb-2">Arraial da Copa</h3>
+              <p class="text-gray-500 text-sm leading-relaxed flex-grow">
+                Evento temático que uniu as tradições do São João com a energia da Copa do Mundo.
+                Os alunos participaram com trajes típicos em uma decoração vibrante e especial,
+                celebrando cultura, alegria e o espírito de comunidade da escola.
+              </p>
+            </div>
+          </article>
+
+          <!-- Evento 2: São João no Shopping -->
+          <article class="event-card fade-in bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-400 flex flex-col" style="--delay: 0.1s">
+            <div class="overflow-hidden flex-shrink-0">
+              <!--
+                SUBSTITUIR PELA FOTO REAL:
+                Foto da apresentação de São João dos alunos no shopping local (conforme post
+                publicado no Instagram da escola em junho de 2026 — Destaque "São João 2026").
+                Alunos em trajes típicos juninos no palco ou espaço do shopping.
+                Tamanho recomendado: 600x380px.
+              -->
+              <img src="https://placehold.co/600x380/FEF3C7/92400E?text=SUBSTITUIR%0A%0AFoto:+São+João+no+Shopping%0AApresentação+dos+alunos%0Aem+trajes+típicos+juninos"
+                   alt="Apresentação de São João — alunos da Escola Felipe Magalhães em trajes típicos juninos no shopping local"
+                   class="card-img w-full h-52 object-cover">
+            </div>
+            <div class="p-6 flex flex-col flex-grow">
+              <div class="flex flex-wrap items-center gap-2 mb-3">
+                <span class="bg-orange-100 text-orange-700 text-xs font-bold px-3 py-1 rounded-full">🎉 São João 2026</span>
+                <span class="bg-school-blue/10 text-school-blue text-xs font-bold px-3 py-1 rounded-full">Apresentação</span>
+              </div>
+              <h3 class="text-lg font-bold text-school-blue mb-2">São João no Shopping</h3>
+              <p class="text-gray-500 text-sm leading-relaxed flex-grow">
+                <em>"Nossos alunos vão levar a alegria do São João para o Shopping. Esperamos vocês para
+                prestigiar esse momento lindo!"</em>
+                <span class="block mt-2 text-xs text-gray-400">— Post oficial do Instagram @escolafelipemagalhaes</span>
+              </p>
+            </div>
+          </article>
+
+          <!-- Card 3: Rotina Pedagógica (Reels) -->
+          <article class="event-card fade-in bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-400 flex flex-col" style="--delay: 0.2s">
+            <div class="overflow-hidden flex-shrink-0">
+              <!--
+                SUBSTITUIR PELA FOTO REAL:
+                Frame de um Reel do Instagram da escola mostrando atividade de rotina pedagógica —
+                aula, projeto, brincadeira orientada, ou bastidor do dia a dia.
+                Sugestão: usar thumbnail de um dos Reels mais visualizados do perfil.
+                Tamanho recomendado: 600x380px.
+              -->
+              <img src="https://placehold.co/600x380/EDE9FE/5B21B6?text=SUBSTITUIR%0A%0AFrame+de+Reel%0ARotina+pedagógica%0Aou+bastidores+da+escola"
+                   alt="Rotina pedagógica da Escola Felipe Magalhães — bastidores e atividades do dia a dia escolar"
+                   class="card-img w-full h-52 object-cover">
+            </div>
+            <div class="p-6 flex flex-col flex-grow">
+              <div class="flex flex-wrap items-center gap-2 mb-3">
+                <span class="bg-purple-100 text-purple-700 text-xs font-bold px-3 py-1 rounded-full">▶ Reels</span>
+                <span class="bg-gray-100 text-gray-500 text-xs font-bold px-3 py-1 rounded-full">Dia a dia</span>
+              </div>
+              <h3 class="text-lg font-bold text-school-blue mb-2">Nossa rotina pedagógica</h3>
+              <p class="text-gray-500 text-sm leading-relaxed flex-grow">
+                A escola publica regularmente vídeos mostrando atividades, bastidores e momentos especiais
+                do cotidiano escolar. Acompanhe tudo no Instagram.
+              </p>
+              <a href="https://instagram.com/escolafelipemagalhaes"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 class="mt-5 inline-flex items-center gap-2 text-school-red font-semibold text-sm hover:gap-3 transition-all duration-200">
+                Ver no Instagram
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- CTA Instagram -->
+        <div class="mt-14 text-center fade-in">
+          <a href="https://instagram.com/escolafelipemagalhaes"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="inline-flex items-center gap-3 border-2 border-school-blue text-school-blue hover:bg-school-blue hover:text-white font-bold px-8 py-3.5 rounded-full transition-all duration-300">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+            Ver todas as fotos no Instagram
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         5. MATRÍCULAS
+    ============================================================ -->
+    <section id="matriculas" class="py-20 lg:py-28 bg-school-blue relative overflow-hidden">
+
+      <!-- Decoração de fundo -->
+      <div aria-hidden="true">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/3"></div>
+        <div class="absolute bottom-0 left-0 w-80 h-80 bg-school-red/10 rounded-full translate-y-1/2 -translate-x-1/3"></div>
+      </div>
+
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-16 items-start">
+
+          <!-- Texto de chamada -->
+          <div class="text-white fade-in-left">
+            <span class="inline-block text-school-yellow text-sm font-bold tracking-widest uppercase mb-4">Vagas disponíveis</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold mb-4 leading-tight">
+              Matrículas Abertas!
+            </h2>
+            <p class="text-xl text-blue-100 font-semibold mb-4">
+              Preparando para o futuro!
+            </p>
+            <p class="text-blue-200 leading-relaxed mb-8 text-sm">
+              Venha conhecer a nossa Escola! A Escola Felipe Magalhães está com matrículas abertas
+              para a Educação Infantil e o Fundamental I. Entre em contato e garanta a vaga do seu filho.
+            </p>
+
+            <ul class="space-y-3 mb-10">
+              <li class="flex items-center gap-3">
+                <span class="w-6 h-6 bg-school-yellow rounded-full flex items-center justify-center flex-shrink-0" aria-hidden="true">
+                  <svg class="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+                </span>
+                <span class="text-blue-100 text-sm">Educação Infantil</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="w-6 h-6 bg-school-yellow rounded-full flex items-center justify-center flex-shrink-0" aria-hidden="true">
+                  <svg class="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+                </span>
+                <span class="text-blue-100 text-sm">Fundamental I</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="w-6 h-6 bg-school-yellow rounded-full flex items-center justify-center flex-shrink-0" aria-hidden="true">
+                  <svg class="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+                </span>
+                <span class="text-blue-100 text-sm">28 anos de tradição em Candeias</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="w-6 h-6 bg-school-yellow rounded-full flex items-center justify-center flex-shrink-0" aria-hidden="true">
+                  <svg class="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+                </span>
+                <span class="text-blue-100 text-sm">Av. Ulisses Montarroyos, 7190, Candeias</span>
+              </li>
+            </ul>
+
+            <!-- INFORMAÇÃO: Substituir "xx" pelo DDD real -->
+            <a href="https://wa.me/xx99926-7481?text=Olá!%20Gostaria%20de%20informações%20sobre%20as%20matrículas%202025%20da%20Escola%20Felipe%20Magalhães."
+               target="_blank"
+               rel="noopener noreferrer"
+               class="inline-flex items-center gap-3 bg-green-500 hover:bg-green-600 text-white font-bold px-8 py-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-green-400/30 hover:-translate-y-0.5">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+              </svg>
+              Fale conosco no WhatsApp
+            </a>
+          </div>
+
+          <!-- Formulário de contato -->
+          <div class="fade-in-right">
+            <div class="bg-white rounded-2xl p-8 shadow-2xl">
+              <h3 class="text-xl font-bold text-school-blue mb-1">Solicite informações</h3>
+              <p class="text-gray-400 text-sm mb-7">Preencha e retornaremos em breve.</p>
+
+              <!--
+                INFORMAÇÃO TÉCNICA:
+                Este formulário é estático (demo). Para funcionar em produção,
+                integrar com Formspree (formspree.io), EmailJS ou backend próprio.
+              -->
+              <form id="contact-form" novalidate>
+                <div class="space-y-4">
+
+                  <!-- Nome -->
+                  <div>
+                    <label for="f-name" class="block text-sm font-medium text-gray-600 mb-1.5">Nome completo <span class="text-school-red" aria-hidden="true">*</span></label>
+                    <input type="text"
+                           id="f-name"
+                           name="name"
+                           autocomplete="name"
+                           placeholder="Seu nome"
+                           class="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-school-red/20 focus:border-school-red transition-colors">
+                    <p id="f-name-error" class="hidden text-red-500 text-xs mt-1.5" role="alert">Por favor, informe seu nome.</p>
+                  </div>
+
+                  <!-- Telefone -->
+                  <div>
+                    <label for="f-phone" class="block text-sm font-medium text-gray-600 mb-1.5">Telefone / WhatsApp <span class="text-school-red" aria-hidden="true">*</span></label>
+                    <input type="tel"
+                           id="f-phone"
+                           name="phone"
+                           autocomplete="tel"
+                           placeholder="(00) 00000-0000"
+                           class="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-school-red/20 focus:border-school-red transition-colors">
+                    <p id="f-phone-error" class="hidden text-red-500 text-xs mt-1.5" role="alert">Informe um telefone com DDD (mínimo 10 dígitos).</p>
+                  </div>
+
+                  <!-- E-mail -->
+                  <div>
+                    <label for="f-email" class="block text-sm font-medium text-gray-600 mb-1.5">E-mail <span class="text-gray-300 text-xs font-normal">(opcional)</span></label>
+                    <input type="email"
+                           id="f-email"
+                           name="email"
+                           autocomplete="email"
+                           placeholder="seu@email.com"
+                           class="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-school-red/20 focus:border-school-red transition-colors">
+                    <p id="f-email-error" class="hidden text-red-500 text-xs mt-1.5" role="alert">Informe um e-mail válido.</p>
+                  </div>
+
+                  <!-- Mensagem -->
+                  <div>
+                    <label for="f-msg" class="block text-sm font-medium text-gray-600 mb-1.5">Mensagem <span class="text-gray-300 text-xs font-normal">(opcional)</span></label>
+                    <textarea id="f-msg"
+                              name="message"
+                              rows="3"
+                              placeholder="Qual segmento te interessa? Tem alguma dúvida?"
+                              class="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-school-red/20 focus:border-school-red transition-colors resize-none"></textarea>
+                  </div>
+
+                  <button type="submit"
+                          id="f-submit"
+                          class="w-full bg-school-red hover:bg-red-700 text-white font-bold py-3.5 rounded-xl transition-colors duration-300 text-sm mt-1 disabled:opacity-60">
+                    Enviar mensagem
+                  </button>
+
+                </div>
+              </form>
+
+              <!-- Mensagem de sucesso (oculta por padrão) -->
+              <div id="form-success" class="hidden mt-4 bg-green-50 border border-green-200 rounded-xl p-5 text-center" role="status" aria-live="polite">
+                <div class="text-2xl mb-2" aria-hidden="true">✅</div>
+                <div class="text-green-700 font-bold text-sm">Mensagem enviada!</div>
+                <div class="text-green-500 text-xs mt-1">Em breve entraremos em contato.</div>
+              </div>
+
+              <p class="text-center text-xs text-gray-300 mt-5">
+                Formulário demonstrativo — integração com servidor pendente.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         6. CONTATO E LOCALIZAÇÃO
+    ============================================================ -->
+    <section id="contato" class="py-20 lg:py-28 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="text-center mb-16 fade-in">
+          <span class="inline-block text-school-red text-sm font-bold tracking-widest uppercase mb-4">Venha nos visitar</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-school-blue">Onde estamos</h2>
+          <p class="mt-4 text-gray-400 max-w-md mx-auto text-sm">
+            Nossa escola está localizada em Candeias e será um prazer receber você.
+          </p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-10 items-start">
+
+          <!-- Informações de contato -->
+          <div class="space-y-5 fade-in-left">
+
+            <!-- Endereço -->
+            <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 flex items-start gap-4">
+              <div class="w-12 h-12 bg-school-red/10 rounded-xl flex items-center justify-center flex-shrink-0" aria-hidden="true">
+                <svg class="w-5 h-5 text-school-red" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-school-blue text-sm mb-1">Endereço</h3>
+                <address class="not-italic text-gray-500 text-sm leading-relaxed">
+                  Av. Ulisses Montarroyos, 7190<br>Candeias
+                </address>
+                <!--
+                  INFORMAÇÃO A CONFIRMAR COM A ESCOLA:
+                  Em um post de matrícula foi encontrado o endereço "Av. Comercial, nº 7729, Candeias".
+                  Verificar se há duas unidades ou qual endereço é o atual antes de publicar.
+                -->
+                <p class="text-xs text-amber-600 mt-2 bg-amber-50 border border-amber-200 rounded-lg px-2 py-1">
+                  ⚠ Confirmar endereço atual com a escola antes de publicar.
+                </p>
+              </div>
+            </div>
+
+            <!-- WhatsApp -->
+            <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 flex items-start gap-4">
+              <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0" aria-hidden="true">
+                <svg class="w-5 h-5 text-green-600" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-school-blue text-sm mb-1">WhatsApp</h3>
+                <!-- INFORMAÇÃO: Substituir "xx" pelo DDD real -->
+                <a href="https://wa.me/xx99926-7481"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="text-gray-600 text-sm hover:text-school-red transition-colors">
+                  (xx) 99926-7481
+                </a>
+                <p class="text-xs text-gray-400 mt-0.5">Clique para abrir o WhatsApp</p>
+                <p class="text-xs text-amber-600 mt-1.5 bg-amber-50 border border-amber-200 rounded-lg px-2 py-1">
+                  ⚠ Substituir "(xx)" pelo DDD real da escola.
+                </p>
+              </div>
+            </div>
+
+            <!-- Instagram -->
+            <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 flex items-start gap-4">
+              <div class="w-12 h-12 bg-pink-100 rounded-xl flex items-center justify-center flex-shrink-0" aria-hidden="true">
+                <svg class="w-5 h-5 text-pink-600" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-school-blue text-sm mb-1">Instagram</h3>
+                <a href="https://instagram.com/escolafelipemagalhaes"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="text-gray-600 text-sm hover:text-pink-600 transition-colors">
+                  @escolafelipemagalhaes
+                </a>
+                <p class="text-xs text-gray-400 mt-0.5">688 publicações · Acompanhe nosso dia a dia</p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Google Maps -->
+          <div class="fade-in-right">
+            <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100">
+              <!--
+                Google Maps Embed — Av. Ulisses Montarroyos, 7190, Candeias.
+                INFORMAÇÃO: Para maior precisão e confiabilidade, substituir pela URL de embed
+                com API Key do Google Maps (console.cloud.google.com) e coordenadas exatas da escola.
+              -->
+              <iframe
+                title="Mapa com localização da Escola Felipe Magalhães — Av. Ulisses Montarroyos, 7190, Candeias"
+                src="https://maps.google.com/maps?q=Av.+Ulisses+Montarroyos,+7190,+Candeias,+PE,+Brasil&output=embed&z=16&hl=pt-BR"
+                width="100%"
+                height="400"
+                style="border:0; display:block;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+              <div class="px-5 py-4 border-t border-gray-100 flex items-center gap-2">
+                <svg class="w-4 h-4 text-school-red flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                </svg>
+                <span class="text-gray-500 text-xs">Av. Ulisses Montarroyos, 7190 — Candeias</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="bg-school-blue text-white">
+
+    <!-- Wave divisor contato → footer -->
+    <div class="wave-divider bg-gray-50" aria-hidden="true">
+      <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,60 C360,0 1080,60 1440,0 L1440,60 L0,60 Z" fill="#1D3557"/>
+      </svg>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
+
+        <!-- Logo + tagline -->
+        <div>
+          <a href="#hero" class="scroll-link flex items-center gap-3 mb-5" aria-label="Escola Felipe Magalhães — topo da página">
+            <svg width="44" height="44" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="32" cy="10" r="7" fill="#FBBF24"/>
+              <path d="M18 28 Q32 16 46 28 L44 32 Q32 22 20 32 Z" fill="#FBBF24"/>
+              <circle cx="13" cy="38" r="7" fill="#E63946"/>
+              <path d="M0 56 Q13 44 26 56 L24 60 Q13 50 2 60 Z" fill="#E63946"/>
+              <circle cx="51" cy="38" r="7" fill="#60A5FA"/>
+              <path d="M38 56 Q51 44 64 56 L62 60 Q51 50 40 60 Z" fill="#60A5FA"/>
+            </svg>
+            <div>
+              <span class="block font-bold text-base leading-tight">Felipe Magalhães</span>
+              <span class="block text-xs font-semibold tracking-widest uppercase text-school-yellow">Escola</span>
+            </div>
+          </a>
+          <p class="text-blue-200 text-sm leading-relaxed">
+            Formando pessoas, cuidando de histórias<br>e construindo futuros há 28 anos.
+          </p>
+          <!-- Instagram -->
+          <a href="https://instagram.com/escolafelipemagalhaes"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="mt-5 inline-flex items-center gap-2 text-blue-300 hover:text-white text-sm transition-colors">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+            @escolafelipemagalhaes
+          </a>
+        </div>
+
+        <!-- Navegação rápida -->
+        <div>
+          <h4 class="text-school-yellow font-bold text-xs uppercase tracking-widest mb-5">Navegação</h4>
+          <nav aria-label="Links do rodapé">
+            <ul class="space-y-2.5">
+              <li><a href="#sobre"        class="scroll-link text-blue-200 text-sm hover:text-white transition-colors">Sobre a escola</a></li>
+              <li><a href="#segmentos"    class="scroll-link text-blue-200 text-sm hover:text-white transition-colors">Segmentos</a></li>
+              <li><a href="#vida-escolar" class="scroll-link text-blue-200 text-sm hover:text-white transition-colors">Vida escolar</a></li>
+              <li><a href="#matriculas"   class="scroll-link text-blue-200 text-sm hover:text-white transition-colors">Matrículas</a></li>
+              <li><a href="#contato"      class="scroll-link text-blue-200 text-sm hover:text-white transition-colors">Contato e localização</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <!-- Contato -->
+        <div>
+          <h4 class="text-school-yellow font-bold text-xs uppercase tracking-widest mb-5">Contato</h4>
+          <address class="not-italic space-y-4">
+            <div class="flex items-start gap-2.5 text-blue-200 text-sm">
+              <svg class="w-4 h-4 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+              </svg>
+              <span>Av. Ulisses Montarroyos, 7190<br>Candeias</span>
+            </div>
+            <!-- INFORMAÇÃO: Substituir "xx" pelo DDD real -->
+            <div class="flex items-center gap-2.5 text-blue-200 text-sm">
+              <svg class="w-4 h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+              </svg>
+              <a href="https://wa.me/xx99926-7481" class="hover:text-white transition-colors">(xx) 99926-7481</a>
+            </div>
+          </address>
+        </div>
+
+      </div>
+
+      <!-- Barra inferior -->
+      <div class="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-blue-400">
+        <p>© <span id="current-year">2025</span> Escola Felipe Magalhães — Todos os direitos reservados.</p>
+        <p>Educação Infantil e Fundamental I · Candeias</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript principal -->
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,158 @@
+/* ==========================================================
+   ESCOLA FELIPE MAGALHÃES — Estilos customizados
+   Complementa o Tailwind CSS CDN
+========================================================== */
+
+/* --- Base --- */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- HEADER: comportamento ao rolar --- */
+#site-header {
+  background: transparent;
+  color: #fff;
+  transition: background 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+}
+
+#site-header.scrolled {
+  background: #fff;
+  color: #1D3557;
+  box-shadow: 0 2px 24px rgba(0, 0, 0, 0.08);
+}
+
+#site-header.scrolled .nav-link {
+  color: #374151;
+}
+
+#site-header.scrolled .logo-text-main { color: #1D3557; }
+#site-header.scrolled .logo-text-sub  { color: #E63946; }
+
+.logo-text-main { color: #fff; transition: color 0.3s; }
+.logo-text-sub  { color: #FBBF24; transition: color 0.3s; }
+
+.hamburger-line {
+  display: block;
+  width: 24px;
+  height: 2px;
+  border-radius: 2px;
+  background-color: #fff;
+  transition: background-color 0.3s, transform 0.3s, opacity 0.3s;
+}
+
+#site-header.scrolled .hamburger-line { background-color: #1D3557; }
+
+#menu-btn.active .hamburger-line:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+#menu-btn.active .hamburger-line:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+#menu-btn.active .hamburger-line:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* --- MOBILE MENU: animação max-height --- */
+#mobile-menu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+}
+#mobile-menu.open { max-height: 520px; }
+
+@media (min-width: 768px) {
+  #mobile-menu { display: none !important; }
+}
+
+/* --- HERO: padrão de fundo --- */
+.hero-pattern {
+  background-image:
+    radial-gradient(circle at 75% 15%, rgba(230, 57, 70, 0.18) 0%, transparent 55%),
+    radial-gradient(circle at 15% 85%, rgba(251, 191, 36, 0.12) 0%, transparent 55%),
+    radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.04) 1px, transparent 0);
+  background-size: auto, auto, 28px 28px;
+}
+
+/* --- FADE-IN ao rolar (Intersection Observer) --- */
+.fade-in,
+.fade-in-left,
+.fade-in-right {
+  opacity: 0;
+  transition: opacity 0.7s ease, transform 0.7s ease;
+  transition-delay: var(--delay, 0s);
+}
+.fade-in       { transform: translateY(32px); }
+.fade-in-left  { transform: translateX(-44px); }
+.fade-in-right { transform: translateX(44px); }
+
+.fade-in.visible,
+.fade-in-left.visible,
+.fade-in-right.visible {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+/* --- CARDS DE EVENTO: hover image zoom --- */
+.event-card .card-img {
+  transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.event-card:hover .card-img { transform: scale(1.06); }
+
+/* --- FORM: estados de validação --- */
+.field-invalid {
+  border-color: #E63946 !important;
+  box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.15);
+}
+
+/* --- BOTÃO FLUTUANTE WHATSAPP --- */
+#whatsapp-fab {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 100;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #25D366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.45);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+#whatsapp-fab:hover {
+  transform: scale(1.08) translateY(-2px);
+  box-shadow: 0 8px 28px rgba(37, 211, 102, 0.5);
+}
+
+/* --- DIVISOR WAVE --- */
+.wave-divider svg { display: block; }
+
+/* --- PLACEHOLDER VISUAL (informação faltante) --- */
+.info-placeholder {
+  background: repeating-linear-gradient(
+    45deg,
+    #fffbeb,
+    #fffbeb 8px,
+    #fef3c7 8px,
+    #fef3c7 16px
+  );
+  border: 1px dashed #f59e0b;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 0.72rem;
+  color: #92400e;
+  font-family: 'Courier New', monospace;
+  line-height: 1.5;
+}
+
+/* --- SCROLLBAR CUSTOM (Chrome/Edge) --- */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: #1D3557; border-radius: 6px; }
+::-webkit-scrollbar-thumb:hover { background: #E63946; }
