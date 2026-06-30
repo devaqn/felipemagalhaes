@@ -3,30 +3,145 @@
    Complementa o Tailwind CSS CDN
 ========================================================== */
 
-/* --- Base --- */
-*, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+/* --- Base: forçar light mode (previne inversão automática do Chrome/Firefox em OS dark mode) ---
+   Usa três camadas de proteção:
+   1) color-scheme: only light no :root (padrão W3C)
+   2) Override explícito via @media prefers-color-scheme: dark (para Chrome Canary / Firefox override)
+   3) inline styles nas seções críticas (camada final)
+*/
+:root {
+  color-scheme: light;
+  --bg-white: #ffffff;
+  --bg-gray:  #f9fafb;
+  --text-dark: #1f2937;
+  --text-blue: #1D3557;
+}
+
+/* Aplicar color-scheme: light em TODOS os elementos previne o Chrome de injetar
+   background-color: Canvas (dark) via UA stylesheet em cada elemento interno */
+*, *::before, *::after {
+  box-sizing: border-box;
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #ffffff;
+  color-scheme: light;
+}
 
 body {
   font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
+  background-color: #ffffff;
+  color: #1f2937;
+}
+
+/* --- DARK MODE OVERRIDE: forçar paleta light mesmo quando browser ignora color-scheme --- */
+@media (prefers-color-scheme: dark) {
+  html, body {
+    background-color: #ffffff !important;
+    color: #1f2937 !important;
+    color-scheme: light !important;
+  }
+
+  /* Seções claras */
+  #sobre,
+  #segmentos,
+  #vida-escolar,
+  #contato {
+    background-color: #ffffff !important;
+    color: #1f2937 !important;
+  }
+  #segmentos { background-color: #f9fafb !important; }
+  #contato   { background-color: #f9fafb !important; }
+
+  /* Cards brancos */
+  article, .card-white,
+  [style*="background-color:#ffffff"] {
+    background-color: #ffffff !important;
+    color: #1f2937 !important;
+  }
+
+  /* Stats cards */
+  [style*="background-color:#f9fafb"] {
+    background-color: #f9fafb !important;
+  }
+
+  /* Mobile menu */
+  #mobile-menu {
+    background-color: #ffffff !important;
+    color: #374151 !important;
+  }
+
+  /* Mapa card */
+  .map-card { background-color: #ffffff !important; }
+
+  /* Form card */
+  .form-card {
+    background-color: #ffffff !important;
+    color: #1f2937 !important;
+  }
+
+  /* Inputs */
+  input, textarea, select {
+    background-color: #ffffff !important;
+    color: #374151 !important;
+    border-color: #e5e7eb !important;
+  }
+
+  /* Títulos, parágrafos dentro de seções claras */
+  #sobre h2, #sobre h3, #sobre p,
+  #segmentos h2, #segmentos h3, #segmentos p,
+  #vida-escolar h2, #vida-escolar h3, #vida-escolar p,
+  #contato h2, #contato h3, #contato p {
+    color: inherit !important;
+  }
+
+  /* Textos com cores específicas da marca — preservar */
+  .text-school-red   { color: #E63946 !important; }
+  .text-school-blue  { color: #1D3557 !important; }
+  .text-school-yellow { color: #FBBF24 !important; }
+  .text-gray-500     { color: #6b7280 !important; }
+  .text-gray-600     { color: #4b5563 !important; }
+  .text-gray-700     { color: #374151 !important; }
+  .text-gray-800     { color: #1f2937 !important; }
+
+  /* Header scrolled: manter branco */
+  #site-header.scrolled {
+    background-color: #ffffff !important;
+    color: #1D3557 !important;
+  }
 }
 
 /* --- HEADER: comportamento ao rolar --- */
 #site-header {
   background: transparent;
   color: #fff;
-  transition: background 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
 #site-header.scrolled {
-  background: #fff;
+  background: #ffffff;
   color: #1D3557;
   box-shadow: 0 2px 24px rgba(0, 0, 0, 0.08);
 }
 
+/* Nav links: cor padrão (hero transparente) */
+.nav-link {
+  color: #fff !important;
+  transition: color 0.2s;
+}
+.nav-link:hover {
+  color: #FBBF24 !important;
+}
+
+/* Nav links: cor no estado scrolled (fundo branco) */
 #site-header.scrolled .nav-link {
-  color: #374151;
+  color: #374151 !important;
+}
+#site-header.scrolled .nav-link:hover {
+  color: #E63946 !important;
 }
 
 #site-header.scrolled .logo-text-main { color: #1D3557; }
@@ -34,6 +149,15 @@ body {
 
 .logo-text-main { color: #fff; transition: color 0.3s; }
 .logo-text-sub  { color: #FBBF24; transition: color 0.3s; }
+
+/* Botão Matricule-se: visível em ambos os estados */
+#site-header .cta-btn {
+  background-color: #E63946;
+  color: #fff !important;
+}
+#site-header .cta-btn:hover {
+  background-color: #c1121f;
+}
 
 .hamburger-line {
   display: block;
@@ -57,10 +181,11 @@ body {
   transform: translateY(-8px) rotate(-45deg);
 }
 
-/* --- MOBILE MENU: animação max-height --- */
+/* --- MOBILE MENU --- */
 #mobile-menu {
   max-height: 0;
   overflow: hidden;
+  background-color: #ffffff;
   transition: max-height 0.38s cubic-bezier(0.4, 0, 0.2, 1);
 }
 #mobile-menu.open { max-height: 520px; }
@@ -71,11 +196,23 @@ body {
 
 /* --- HERO: padrão de fundo --- */
 .hero-pattern {
+  background-color: #1D3557;
   background-image:
     radial-gradient(circle at 75% 15%, rgba(230, 57, 70, 0.18) 0%, transparent 55%),
     radial-gradient(circle at 15% 85%, rgba(251, 191, 36, 0.12) 0%, transparent 55%),
     radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.04) 1px, transparent 0);
   background-size: auto, auto, 28px 28px;
+}
+
+/* --- SECTIONS: forçar fundos corretos contra dark mode --- */
+.section-white { background-color: #ffffff !important; }
+.section-gray  { background-color: #f9fafb !important; }
+.section-blue  { background-color: #1D3557 !important; }
+
+/* Garante que cards brancos sejam sempre brancos */
+.card-white {
+  background-color: #ffffff !important;
+  color: #1f2937 !important;
 }
 
 /* --- FADE-IN ao rolar (Intersection Observer) --- */
@@ -106,7 +243,17 @@ body {
 /* --- FORM: estados de validação --- */
 .field-invalid {
   border-color: #E63946 !important;
-  box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.15);
+  box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.15) !important;
+}
+
+/* Form inputs: garantir cores contra dark mode */
+input, textarea, select {
+  color-scheme: light;
+  background-color: #ffffff;
+  color: #374151;
+}
+input::placeholder, textarea::placeholder {
+  color: #9ca3af;
 }
 
 /* --- BOTÃO FLUTUANTE WHATSAPP --- */
@@ -124,6 +271,7 @@ body {
   justify-content: center;
   box-shadow: 0 4px 20px rgba(37, 211, 102, 0.45);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
+  text-decoration: none;
 }
 #whatsapp-fab:hover {
   transform: scale(1.08) translateY(-2px);
@@ -156,3 +304,24 @@ body {
 ::-webkit-scrollbar-track { background: #f1f5f9; }
 ::-webkit-scrollbar-thumb { background: #1D3557; border-radius: 6px; }
 ::-webkit-scrollbar-thumb:hover { background: #E63946; }
+
+/* --- BADGE HERO: evitar clip pelo overflow-hidden da section --- */
+.hero-badge-wrap {
+  overflow: visible !important;
+}
+
+/* --- RESPONSIVIDADE: ajustes finos --- */
+
+/* Mobile: hero badge e card flutuante só em telas maiores (já garantido pelo lg:block no HTML) */
+
+/* Tablet 768px: segmentos em coluna */
+@media (max-width: 767px) {
+  .hero-stats-card {
+    left: 0 !important;
+    bottom: -24px;
+  }
+}
+
+/* Garantia de que texto preto no fundo branco seja legível */
+.text-safe-dark { color: #1D3557 !important; }
+.text-safe-gray { color: #6b7280 !important; }
